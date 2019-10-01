@@ -210,7 +210,7 @@
             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo URL;?>Producto/index" aria-expanded="false"><i class="fas fa-cart-plus"></i><span class="hide-menu">Productos</span></a></li>
             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo URL;?>servicios" aria-expanded="false"><i class="mdi mdi-screwdriver"></i><span class="hide-menu">Servicios</span></a></li>
             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="gridswwa.html" aria-expanded="false"><i class="mdi mdi-account-plus"></i><span class="hide-menu">Usuarios</span></a></li>
-            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="gridswdw.html" aria-expanded="false"><i class="mdi mdi-sale"></i><span class="hide-menu">Ventas</span></a></li>
+            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?php echo URL; ?>ventas" aria-expanded="false"><i class="mdi mdi-sale"></i><span class="hide-menu">Ventas</span></a></li>
         </nav>
         <!-- End Sidebar navigation -->
       </div>
