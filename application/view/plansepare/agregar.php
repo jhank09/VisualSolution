@@ -5,7 +5,7 @@
     <div class="box">
         <form action="<?php echo URL; ?>PlanSepare/agregar" method="POST">
             <label>Abono</label>
-            <input type="number" name="abono" value="" required />
+            <input type="number" name="abono" value="" required min="1" />
             <label>Nombre Cliente</label>
             <select name="id_cliente" id="" required="">
                         <option></option>
