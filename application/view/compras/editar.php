@@ -1,10 +1,10 @@
 <div class="container">
     <br>
-    <h1 class="text-center">Editar Servicio</h1>
+    <h1 class="text-center">Editar Compra</h1>
     <div class="box">
-        <form action="<?php echo URL; ?>compras/actualizarservicios" method="POST">
-            <label>Tipo de servicio</label>
-            <input type="text" name="valor_compra" value="<?php echo $com->valor_compra; ?>" required m/>
+        <form action="<?php echo URL; ?>compras/actualizarcompra" method="POST">
+            <label>Valor de la compra</label>
+            <input type="text" name="valor_compra" value="<?php echo $com->valor_compra; ?>" required min/>
             
             <input type="hidden" name="id_compra" value="<?php echo $com->id_compra; ?>" />
             <input type="submit" name="btnguardaredit" class="btn btn-success" value="Actualizar" />

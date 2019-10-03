@@ -19,7 +19,7 @@ class Compras extends Model
 
     public function agregar($valor_compra)
     {
-        $sql = "INSERT INTO servicios (valor_compra,) VALUES (:valor_compra, )";
+        $sql = "INSERT INTO compras (valor_compra) VALUES (:valor_compra)";
         $query = $this->db->prepare($sql);
         $parameters = array(':valor_compra' => $valor_compra);
 
@@ -28,7 +28,7 @@ class Compras extends Model
 
     public function eliminar($id_compra)
     {
-        $sql = "DELETE FROM servicios WHERE id_compra = :id_compra";
+        $sql = "DELETE FROM compras WHERE id_compra = :id_compra";
         $query = $this->db->prepare($sql);
         $parameters = array(':id_compra' => $id_compra);
 
@@ -37,7 +37,7 @@ class Compras extends Model
 
     public function get_compras($id_compra)
     {
-        $sql = "SELECT * FROM servicios WHERE id_compra = :id_compra";
+        $sql = "SELECT * FROM compras WHERE id_compra = :id_compra";
         $query = $this->db->prepare($sql);
         $parameters = array(':id_compra' => $id_compra);
 
@@ -46,9 +46,9 @@ class Compras extends Model
         return ($query->rowcount() ? $query->fetch() : false);
     }
 
-    public function actualizarservicios($valor_compra, $id_compra)
+    public function actualizarcompra($valor_compra, $id_compra)
     {
-        $sql = "UPDATE servicios SET = , valor_compra = :valor_compra WHERE id_compra = :id_compra";
+        $sql = "UPDATE compras SET valor_compra = :valor_compra WHERE id_compra = :id_compra";
         $query = $this->db->prepare($sql);
         $parameters = array(':valor_compra' => $valor_compra, ':id_compra' => $id_compra);
 
