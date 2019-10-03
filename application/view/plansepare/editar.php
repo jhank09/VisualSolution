@@ -4,9 +4,9 @@
     <div class="box">
         <form action="<?php echo URL; ?>PlanSepare/actualizarplansepare" method="POST">
             <label>abono</label>
-            <input type="number" name="abono" value="<?php echo htmlspecialchars($pla->abono, ENT_QUOTES, 'UTF-8'); ?>" required />
+            <input type="number" name="abono" value="<?php echo htmlspecialchars($pla->abono, ENT_QUOTES, 'UTF-8'); ?>" required min="1" />
             <label>Cliente</label>
-            <select name="id_cliente" required>
+            <select name="id_cliente">
               <option></option>
               <?php foreach ($cli as $c): ?>
                 <option value="<?= $c->id_cliente ?>"><?= $c->nombre_cliente ?></option>
