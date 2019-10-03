@@ -10,7 +10,7 @@
       <tr>
           <td ><b>Id comptra</b></td>
           <td><b>Valor de la compra</b></td>
-          <td><b>Fecha de la compra</b></td>
+          <td><b>Fecha</b></td>
       </tr>
       </thead>
       <tbody>
