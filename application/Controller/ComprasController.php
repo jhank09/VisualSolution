@@ -25,7 +25,7 @@ class ComprasController
         header('location: ' . URL . 'compras/index');
     }
 
-    public function agregarservicios()
+    public function agregarcompra()
     {
 
         require APP . 'view/_templates/header.php';
@@ -47,7 +47,7 @@ class ComprasController
     {
         if (isset($id_compra)) {
             $Com = new Compras();
-            $com = $Com->get_servicios($id_compra);
+            $com = $Com->get_compras($id_compra);
             if ($com === false) {
                 $page = new \Mini\Controller\ErrorController();
                 $page->index();
@@ -61,11 +61,11 @@ class ComprasController
         }
     }
 
-    public function actualizarcompras()
+    public function actualizarcompra()
     {
         if (isset($_POST["btnguardaredit"])) {
             $Com = new Compras();
-            $Com->actualizarservicios($_POST["valor_compra"]);
+            $Com->actualizarcompra($_POST["valor_compra"],$_POST["id_compra"]);
         }
 
         header('location: ' . URL . 'compras/index');
