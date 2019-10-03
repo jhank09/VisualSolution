@@ -9,11 +9,14 @@ class PlanSepare extends Model
 
     public function listar()
     {
-        $sql = "SELECT * FROM plan_separe";
+        $sql = "SELECT pp.*, c.documento as documento_cliente, c.nombre_cliente as nombre_cliente
+        FROM plan_separe pp
+        INNER JOIN clientes c ON (pp.id_cliente = c.id_cliente)";
         $query = $this->db->prepare($sql);
         $query->execute();
 
         return $query->fetchAll();
+
     }
 
     public function agregar($abono, $id_cliente)
