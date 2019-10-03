@@ -5,10 +5,13 @@
         <form action="<?php echo URL; ?>PlanSepare/actualizarplansepare" method="POST">
             <label>abono</label>
             <input type="number" name="abono" value="<?php echo htmlspecialchars($pla->abono, ENT_QUOTES, 'UTF-8'); ?>" required />
-            <!---<label>fecha</label>
-            <input type="date" name="fecha" value="<?php echo htmlspecialchars($pla->fecha, ENT_QUOTES, 'UTF-8'); ?>" required />-->
-            <label>Id Cliente</label>
-            <input type="number" name="id_cliente" value="<?php echo htmlspecialchars($pla->id_cliente, ENT_QUOTES, 'UTF-8'); ?>" required />
+            <label>Cliente</label>
+            <select name="id_cliente" required>
+              <option></option>
+              <?php foreach ($cli as $c): ?>
+                <option value="<?= $c->id_cliente ?>"><?= $c->nombre_cliente ?></option>
+              <?php endforeach;?>
+            </select>
             <input type="hidden" name="id_plan_separe" value="<?php echo htmlspecialchars($pla->id_plan_separe, ENT_QUOTES, 'UTF-8'); ?>" />
             <input type="submit" name="btnguardaredit" class="btn btn-success" value="Actualizar" />
             <br>

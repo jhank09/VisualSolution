@@ -55,6 +55,8 @@ class PlanSepareController
     public function editar($id_plan_separe)
     {
         if (isset($id_plan_separe)) {
+          $Cli = new Cliente();
+          $cli=$Cli->listar();
             $Pla = new PlanSepare();
             $pla = $Pla->get_plansepare($id_plan_separe);
             if ($pla === false) {

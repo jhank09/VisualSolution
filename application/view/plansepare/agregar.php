@@ -6,17 +6,15 @@
         <form action="<?php echo URL; ?>PlanSepare/agregar" method="POST">
             <label>Abono</label>
             <input type="number" name="abono" value="" required />
-            <!--<label>Fecha</label>
-            <input type="date" name="fecha" value="" required />-->
-            <label>Id Cliente</label>
-            <select class="form-control" name="id_cliente" id="" required="">
+            <label>Nombre Cliente</label>
+            <select name="id_cliente" id="" required="">
                         <option></option>
                         <?php foreach ($cli as $Cli): ?>
                             <option value="<?= $Cli->id_cliente ?>"><?= $Cli->nombre_cliente ?></option>
                         <?php endforeach; ?>
-                    </select>
-            <!--<input type="number" name="id_cliente" value="" required />-->
+            </select>
             <input type="submit" class="btn btn-success" name="btnguardar" value="Agregar" />
+            <br>
             <br>
             <a type="button" class="btn btn-outline-primary float-sm-right" name="regresar" role="button" href="<?php echo URL; ?>plansepare" />Regresar</a>
             <br>
