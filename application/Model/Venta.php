@@ -11,7 +11,7 @@ class Venta extends Model
     {
         $sql = "SELECT v.*, c.nombre_cliente as cliente, u.correo as usuario
         FROM ventas v
-        INNER JOIN clientes c ON (v.id_cliente = c.id_cliente) 
+        INNER JOIN clientes c ON (v.id_cliente = c.id_cliente)
         INNER JOIN usuarios u ON (v.id_usuario = u.id_usuario)";
         $query = $this->db->prepare($sql);
         $query->execute();
