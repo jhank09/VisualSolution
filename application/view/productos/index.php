@@ -51,7 +51,10 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Imagen Producto</label>
-                    <input type="file" name="imagen" id="marca" required="">
+                    <div class="custom-file">
+   <input type="file" class="custom-file-input" name="imagen" required="" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+   <label class="custom-file-label" for="inputGroupFile04">Imagen</label>
+ </div>
                     <p class="valid-feedback"> Buen trabajo</p>
                     <p class="invalid-feedback">Campo requerido</p>
                 </div>
@@ -60,7 +63,7 @@
         <div class="row justify-content-center">
             <button type="submit" name="btnGuardar" class="btn btn-info">Guardar</button>
         </div>
-    </form>     
+    </form>
 </div>
 
 <br>
@@ -78,7 +81,7 @@
                             <th>Valor</th>
                             <th>Marca</th>
                             <th>Categoria</th>
-                            <th>cantidad</th> 
+                            <th>cantidad</th>
                             <th>Imagen</th>
                             <th>Editar</th>
                             <th>Eliminar</th>
@@ -86,7 +89,7 @@
                     </thead>
                     <tbody>
                         <?php foreach ($productos as $p): ?>
-                            <tr> 
+                            <tr>
                                 <td><?= $p->nombre_producto;?></td>
                                 <td><?= $p->valor_producto;?></td>
                                 <td><?= $p->marca; ?></td>
@@ -96,16 +99,10 @@
                                 <td><a href="<?= URL. 'Producto/editar/' . $p->id_producto; ?>" class="btn btn-info"><i class="fas fa-edit"></i></a></td>
                                 <td><a href="<?= URL . 'Producto/eliminar/' . $p->id_producto; ?>" class="btn btn-info"> <i class="fas fa-trash-alt"></i></a></td>
                             </tr>
-                        <?php endforeach; ?>              
-                    </tbody>        
-                </table> 
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-
-
