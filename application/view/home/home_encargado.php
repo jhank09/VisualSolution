@@ -1,0 +1,1 @@
+<h1 class="h1">esta es la vista del encargado</h1>
