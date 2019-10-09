@@ -31,6 +31,7 @@
 <script src="<?php echo URL; ?>js/password_strength.js"></script>
 <script src="<?php echo URL; ?>js/jquery-strength.js"></script>
 <script src="<?php echo URL; ?>js/seguridad_pass.js"></script>
+<script src="<?php echo URL; ?>js/ventas.js"></script>
 <script>
     function myFunction() {
         var x = document.getElementById("myInput");
