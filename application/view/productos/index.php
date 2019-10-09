@@ -95,7 +95,7 @@
                 <td><?= $p->marca; ?></td>
                 <td><?= $p->id_categoria_producto; ?></td>
                 <td><?= $p->cantidad; ?></td>
-                <td><img src="<?php echo URL."public/img/".$p->imagen_producto;?>" alt="<?= $p->nombre_producto;?>"></td>
+                <td><img class="w-25" src="<?php echo URL."public/img/".$p->imagen_producto;?>" alt="<?= $p->nombre_producto;?>"></td>
                 <td><a href="<?= URL. 'Producto/editar/' . $p->id_producto; ?>" class="btn btn-info"><i class="fas fa-edit"></i></a></td>
                 <td><a href="<?= URL . 'Producto/eliminar/' . $p->id_producto; ?>" class="btn btn-info"> <i class="fas fa-trash-alt"></i></a></td>
               </tr>
