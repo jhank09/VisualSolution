@@ -26,7 +26,7 @@
 <script src="<?php echo URL; ?>assets/libs/flot/jquery.flot.crosshair.js"></script>
 <script src="<?php echo URL; ?>assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
 <script src="<?php echo URL; ?>dist/js/pages/chart/chart-page-init.js"></script>
-
+<script src="<?php echo URL; ?>js/ventas.js"></script>
 
 
 <script>
