@@ -8,7 +8,10 @@ class Producto extends Model {
 
     
     public function listarProducto(){
-        $sql = "SELECT * FROM productos";
+          $sql = "SELECT p.*, cp.nombre_categoria_producto as categoria 
+                FROM productos p
+                INNER JOIN categoria_productos cp 
+                ON (p.id_categoria_producto = cp.id_categoria_producto)";
         $stm = $this->db->prepare($sql);
         $stm->execute();
         return $stm->fetchAll();

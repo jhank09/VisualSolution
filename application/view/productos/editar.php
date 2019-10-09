@@ -1,5 +1,5 @@
 <div class="container">
-    <form action="<?= URL ?>Producto/actualizar" method="post">
+    <form action="<?= URL ?>Producto/actualizar" method="post" enctype="multipart/form-data">
         <div class="row">
             <input type="hidden" name="id_producto" id="id_producto" class="form-control"
                    value="<?= $productos->id_producto?>">
@@ -43,6 +43,14 @@
                     <label>Cantidad</label>
                     <input type="text" name="cantidad" id="marca" class="form-control" placeholder="La marca es?"
                            value="<?= $productos->cantidad ?>">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Imagen Producto</label>
+                    <input type="file" name="imagen" id="imagen" required="" value="">
+                    <p class="valid-feedback"> Buen trabajo</p>
+                    <p class="invalid-feedback">Campo requerido</p>
                 </div>
             </div>
         </div>
