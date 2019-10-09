@@ -6,13 +6,28 @@ use Mini\Core\Model;
 
 class Usuario extends Model {
 
-    public function listarUsuario(){
+    private $id_usuario;
+    private $correo;
+    private $contraseña;
+    private $rol;
+    private $estado;
+
+    public function __SET($a, $v) {
+        $this->$a = $v;
+    }
+
+    public function __GET($a) {
+        return $a;
+    }
+
+    public function listarUsuario() {
         $sql = "SELECT * FROM usuarios";
         $stm = $this->db->prepare($sql);
         $stm->execute();
         return $stm->fetchAll();
     }
-     public function detalle($id) {
+
+    public function detalle($id) {
         $sql = "SELECT * FROM usuarios  WHERE id_usuario = :id LIMIT 1";
         $consulta = $this->db->prepare($sql);
         $parametros = array(':id' => $id);
@@ -69,6 +84,5 @@ class Usuario extends Model {
         $consulta->bindParam(5, $this->id_usuario);
         return $consulta->execute();
     }
-
 
 }

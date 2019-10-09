@@ -35,8 +35,7 @@ var usuario = {
 
                 $("#tbl_usuario tbody").append
                         ("<tr><td>" + e.id_usuario +
-                                "</td><td>" + e.correo + "</td><td>" + e.contraseña +
-                                "</td><td>" + nombre_rol + "</td><td>" + estado +
+                                "</td><td>" + e.correo + "</td><td>" + nombre_rol + "</td><td>" + estado +
                                 "</td><td>" + btn_cambiar_estado + " " + btn_editar + "</td></tr>");
             });
         });

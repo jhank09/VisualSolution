@@ -5,11 +5,13 @@
   <a class="btn btn-primary" href="<?php echo URL . 'proveedores/agregarproveedor'?>" role="button"><i class="mdi mdi-account-multiple-plus"></i>   Agregar</a>
 <br>
 <br>
-  <table class="table table-hover">
+<table id="example" class="table table-hover table-bordered">
       <thead >
       <tr>
           <td><b>Nombre</b></td>
           <td><b>Teléfono</b></td>
+          <td><b>Editar</b></td>
+          <td><b>Eliminar</b></td>
       </tr>
       </thead>
       <tbody>

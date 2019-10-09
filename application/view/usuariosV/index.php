@@ -8,10 +8,9 @@
                     <tr>
                         <th>Id usuario</th>
                         <th>Correo</th>
-                        <th>Contraseña</th>
                         <th>Rol</th>
                         <th>Estado</th>
-                        <th id="acciones">Acciones</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
