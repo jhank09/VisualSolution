@@ -5,6 +5,10 @@ namespace Mini\Controller;
 use Mini\Model\Venta;
 use Mini\Model\Cliente;
 use Mini\Model\Usuario;
+use Mini\Model\Producto;
+use Mini\Model\ProductoVenta;
+
+
 
 
 
@@ -35,6 +39,8 @@ class VentasController
 
   public function agregarventa()
   {
+    $p = new Producto();
+    $producto = $p->listarProducto();
     $c = new Cliente();
     $cliente = $c->listar();
     $u = new Usuario();
