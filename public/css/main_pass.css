@@ -1,0 +1,43 @@
+body {padding-top: 110px; background-color: #F7F7F7 }
+nav .nombre-plugin {font-size: 20px}
+nav .link-post {padding-top: 5px}
+
+h1 {text-align: center; margin: 40px 0; font-size: 80px; font-family: "Tangerine"}
+
+.hsimp-results {left: 0!important; width: 100%!important; max-width: 100%!important;}
+
+
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}
+
+.form-control:focus {border: 1px solid #ccc; box-shadow: none}
+.form-inline .input-group input, .form-inline .input-group i {font-size: 25px}
+.form-inline .input-group > .form-control {height: 100px}
+.form-inline .form-group {display: block; width: 50%; margin: auto; -webkit-border-radius: 0 0 0 0;border-radius: 0 0 0 0;}
+.input-group .input-group-addon {-webkit-border-radius: 0 0 0 0;border-radius: 0 0 0 0;}
+
+.leyenda {display: block; overflow: hidden; width: 50%; margin: auto; text-align: center; border-bottom: 1px solid #FFF}
+.leyenda span {color: #FFF; padding: 2px 0;}
+.leyenda .insegura {background: #C63136}
+.leyenda .segura {background: #DE7B46}
+.leyenda .muysegura {background: #2F8249}
+
+@media (max-width: 728px) {
+	.form-inline .input-group input, .form-inline .input-group i {font-size: 18px}
+	.form-inline .form-group, .leyenda {display: block; width: 100%}
+	h1 {font-size: 50px}
+}
