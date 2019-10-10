@@ -7,7 +7,7 @@ class HomeController {
     public function index() {
         // load views
 
-        require APP . 'view/Home/inicial.php';
+        require APP . 'view/home/inicial.php';
     }
 
     public function vistaAdmin() {
@@ -25,7 +25,7 @@ class HomeController {
     }
 
     public function vistaEmpleado() {
-       
+
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/home_empleado.php';
         require APP . 'view/_templates/footer.php';
