@@ -45,8 +45,11 @@
 <script>
     var uri = "<?php echo URL; ?>";
 </script>
+
 <script src="<?php echo URL; ?>js/misJS.js"></script>
 <script src="<?php echo URL; ?>js/validar_prod.js"></script>
+<script src="<?php echo URL; ?>js/validar_login.js"></script>
+<script src="<?php echo URL; ?>js/validar_usuario.js"></script>
 
 </body>
 

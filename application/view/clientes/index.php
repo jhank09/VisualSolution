@@ -2,7 +2,8 @@
     <br>
     <h1 class="text-center">Clientes</h1>
 
-    <a class= "btn btn-primary" name="agregar" href="<?php echo URL . 'clientes/agregarcliente' ?>" role="button"><i class="mdi mdi-account-multiple-plus"></i>   Agregar</a>
+    <a class= "btn btn-primary" name="agregar" href="<?php echo URL . 'clientes/agregarcliente' ?>" 
+       role="button"><i class="mdi mdi-account-multiple-plus"></i>   Agregar</a>
     <br>
     <br>
     <table id="example" class="table table-hover table-bordered">

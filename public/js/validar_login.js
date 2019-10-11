@@ -4,7 +4,7 @@ function validar_formulario() {
     correo = $("#correo").val();
     contraseña = $("#contraseña").val();
 
-    if (contraseña == "" || contraseña == "") {
+    if (correo == "" || contraseña == "") {
         $("#mensaje").html("*campo requerido").addClass("alert alert-danger");
         $("#mensaje2").html("*campo requerido").addClass("alert alert-danger");
         return false;
@@ -24,22 +24,32 @@ function validar_formulario() {
         return true;
     }
 
-    $.ajax({
-        type: 'post',
-        dataType: 'json',
-        url: uri + 'Login/logueo',
-    }).done((respuesta) => {
-        respuesta.forEach((e, i) => {
-            let correobd = e.correo;
-            let contraseñabd = e.contraseña;
 
-            if (correobd != correo || contraseñabd != contraseña) {
-                $("#mensaje").html("*Correo o contraseña invalida").css("color", "red");
-                return false;
-            }
-
-        });
-
-    });
 }
+
+//jQuery(document).on("submit", "#loginForm", function (event) {
+//    let correo = $("#correo").val();
+//    let contraseña = $("#contraseña").val();
+//
+//    event.preventDefault();
+//    jQuery.ajax({
+//        url: uri + "Usuario/listar",
+//        type: 'POST',
+//        dataType: 'json'
+//    }).done(function (respuesta) {
+//        respuesta.forEach((element, index) => {
+//
+//            let contraseñabd = element.contraseña;
+//            let correobd = element.correo;
+//            
+//            if((correobd != correo)){
+//                $("#mensaje").html("Usuario o contraseña invalida").css("color", "red");
+//            }
+//
+//        });
+//    }).fail(function (resp) {
+//        console.log(resp);
+//    });
+//
+//});
 

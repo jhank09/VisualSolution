@@ -22,7 +22,7 @@
         <script src="<?php echo URL; ?>js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <link rel="shortcut icon" href="<?php echo URL; ?>img/favicon.png">
         <link rel="stylesheet" href="<?php echo URL; ?>css/estilos_landing.css">
-        
+
     </head>
 
     <body>
@@ -478,6 +478,9 @@
         <script src="<?php echo URL; ?>js/jquery.ba-cond.min.js"></script>
         <script src="<?php echo URL; ?>js/jquery.slitslider.js"></script>
         <script src="<?php echo URL; ?>js/validar_login.js"></script>
+        <script>
+              var uri = "<?php echo URL; ?>";
+        </script>
         <!-- Slider -->
         <script src="<?php echo URL; ?>js/slider.js"></script>
         <!-- /Slider -->

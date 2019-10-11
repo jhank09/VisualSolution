@@ -1,27 +1,29 @@
 <?php
 
 namespace Mini\Controller;
+
 use Mini\Model\Producto;
 use Mini\Model\Categoria;
 
-
-
 class ProductoController {
 
- 
-      public function index() {
+    public function index() {
 
         $p = new Producto();
         $productos = $p->listarProducto();
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/productos/index.php';
+        require APP . 'view/_templates/footer.php';
+    }
+
+    public function vistaCrear() {
         $c = new Categoria();
         $categorias = $c->listarCategoria();
 
         require APP . 'view/_templates/header.php';
-        require APP . 'view/productos/index.php';
+        require APP . 'view/productos/crear.php';
         require APP . 'view/_templates/footer.php';
-    }  
-  
-    
+    }
 
     public function guardar() {
         if (isset($_POST["btnGuardar"])) {
@@ -34,7 +36,7 @@ class ProductoController {
             if ($tam_img <= 10000) {//valido la que el peso del archivo sea menor a 10000 bytes, si lo es, lo subo al servidor
                 if ($tipo_img == "image/jpeg" || $tipo_img == "image/jpg" || $tipo_img == "image/png") {
 
-                    //ruta de la carpeta destino n el servidor
+                    //ruta de la carpeta destino en el servidor
                     $carpeta_destino = $_SERVER["DOCUMENT_ROOT"] . "/VisualSolution_F/public/img/";
 
                     //movemos la imagen del direcctorio temporal al directorio escogido
@@ -96,9 +98,7 @@ class ProductoController {
                     //movemos la imagen del direcctorio temporal al directorio escogido
                     move_uploaded_file($_FILES["imagen"]["tmp_name"], $carpeta_destino . $nom_img);
 
-                    $p->editarProducto($_POST['nombre_producto'], $_POST['valor'], $_POST['marca'], $_POST['categoria'], $_POST['cantidad'], $_POST['id_producto'],$nom_img);
-                
-                    
+                    $p->editarProducto($_POST['nombre_producto'], $_POST['valor'], $_POST['marca'], $_POST['categoria'], $_POST['cantidad'], $_POST['id_producto'], $nom_img);
                 } else {
                     header('location: ' . URL . 'Producto/index');
                 }
@@ -106,7 +106,7 @@ class ProductoController {
                 header('location: ' . URL . 'Producto/index');
             }
         }
-        header('location: ' . URL . 'Producto/index');        
+        header('location: ' . URL . 'Producto/index');
     }
 
 }
