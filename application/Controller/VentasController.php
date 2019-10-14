@@ -32,6 +32,31 @@ class VentasController
       $Ven = new Venta();
 
       $Ven->agregar($_POST["valor_venta"], $_POST["id_cliente"], $_POST["id_usuario"]);
+
+      try {
+
+        $respuestas = $Ven->agregar();
+
+        if($respuestas != false){
+          $ultimo = $respuestas->id;
+
+          foreach($_POST["producto"] as $Key => $id){
+
+            $pc = new ProductoVenta();
+            $pc->_SET("ventas", $ultimo);
+            $pc->_SET("productos", $id);
+            $pc->_SET("cantidad", $_POST["cantidad"][$key]);
+            $pc->agregar();
+          }
+
+          $_SESSION["mensaje"] = "se guardo";
+        }else {
+          $_SESSION["mensaje"] = "no se guardo";
+        }
+      }catch (\Exception $e) {
+          $_SESSION["mensaje"] = $e->getMessage();
+        }
+
     }
 
     header('location: ' . URL . 'ventas/index');

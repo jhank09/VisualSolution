@@ -19,10 +19,10 @@ class ProductoVenta extends Model
     return $query->fetchAll();
   }
 
-  public function guardar(){
-    $sql="INSERT INTO productos_ventas (id_producto, id_venta, cantidad, total_venta_producto) VALUES (:id_producto, :id_venta, :cantidad, :total_venta_producto)";
+  public function agregar($id_producto, $id_venta, $cantidad){
+    $sql="INSERT INTO productos_ventas (id_producto, id_venta, cantidad) VALUES (:id_producto, :id_venta, :cantidad)";
     $query = $this->db->prepare($sql);
-    $parameters = array(':id_producto' => $id_producto, ':id_venta' => $id_venta, ':cantidad' => $cantidad, ':total_venta_producto' => $total_venta_producto);
+    $parameters = array(':id_producto' => $id_producto, ':id_venta' => $id_venta, ':cantidad' => $cantidad);
     return $query->execute($parameters);
   }
 

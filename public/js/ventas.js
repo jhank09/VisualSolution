@@ -5,6 +5,6 @@ function agregar_producto(){
 
 
   $("#tb_productos").append(
-    "<tr id='tr"+id_producto+"'><td>"+nombre_p+"</td><td>"+cantidad+"</td><td><button type='button' onclick='$("+'"'+"#tr"+id_producto+'"'+").remove()' class='btn btn-danger'>X</button></td><tr>"
+    "<tr id='tr"+id_producto+"'> <input type='hidden' name='producto[]' value='"+id_producto+"'> <input type='hidden' name='cantidad[]' value='"+cantidad+"'> <td>"+nombre_p+"</td><td>"+cantidad+"</td><td><button type='button' onclick='$("+'"'+"#tr"+id_producto+'"'+").remove()' class='btn btn-danger'>X</button></td><tr>"
   );
 }
