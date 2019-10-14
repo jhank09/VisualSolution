@@ -7,7 +7,7 @@ use Mini\Core\Model;
 class ProductoVenta extends Model
 {
 
-  public function listar ($pv_id_venta){
+  public function listar (){
     $sql= "SELECT v.*, p.nombre_producto, p.valor_producto
     FROM productos_ventas pv
     INNER JOIN productos p ON (p.id_producto = pv.id_producto_venta)
@@ -19,10 +19,10 @@ class ProductoVenta extends Model
     return $query->fetchAll();
   }
 
-  public function agregar($id_producto, $id_venta, $cantidad){
+  public function agregar($id, $ultimo, $cantidad){
     $sql="INSERT INTO productos_ventas (id_producto, id_venta, cantidad) VALUES (:id_producto, :id_venta, :cantidad)";
     $query = $this->db->prepare($sql);
-    $parameters = array(':id_producto' => $id_producto, ':id_venta' => $id_venta, ':cantidad' => $cantidad);
+    $parameters = array(':id_producto' => $id, ':id_venta' => $ultimo, ':cantidad' => $cantidad);
     return $query->execute($parameters);
   }
 

@@ -31,107 +31,92 @@ class VentasController
 
       $Ven = new Venta();
 
-      $Ven->agregar($_POST["valor_venta"], $_POST["id_cliente"], $_POST["id_usuario"]);
+      $respuestas = $Ven->agregar($_POST["valor_venta"], $_POST["id_cliente"], $_POST["id_usuario"]);
 
-      try {
+      if($respuestas != 0){
+        $ultimo = $respuestas->id;
 
-        $respuestas = $Ven->agregar();
-
-        if($respuestas != false){
-          $ultimo = $respuestas->id;
-
-          foreach($_POST["producto"] as $Key => $id){
-
-            $pc = new ProductoVenta();
-            $pc->_SET("ventas", $ultimo);
-            $pc->_SET("productos", $id);
-            $pc->_SET("cantidad", $_POST["cantidad"][$key]);
-            $pc->agregar();
-          }
-
-          $_SESSION["mensaje"] = "se guardo";
-        }else {
-          $_SESSION["mensaje"] = "no se guardo";
-        }
-      }catch (\Exception $e) {
-          $_SESSION["mensaje"] = $e->getMessage();
+        foreach($_POST["producto"] as $Key => $id){
+          $pc = new ProductoVenta();
+          
+          $pc->agregar($ultimo, $id, $_POST["cantidad"][$key]);
         }
 
+      }
+    }
+      header('location: ' . URL . 'ventas/index');
     }
 
-    header('location: ' . URL . 'ventas/index');
-  }
-
-  public function agregarventa()
-  {
-    $p = new Producto();
-    $producto = $p->listarProducto();
-    $c = new Cliente();
-    $cliente = $c->listar();
-    $u = new Usuario();
-    $usuario = $u->listarUsuario();
-    require APP . 'view/_templates/header.php';
-    require APP . 'view/ventas/agregar.php';
-    require APP . 'view/_templates/footer.php';
-
-  }
-
-
-  public function eliminar($id_venta)
-  {
-
-    if (isset($id_venta)) {
-
-      $Ven = new Venta();
-
-      $Ven->eliminar($id_venta);
-    }
-
-    header('location: ' . URL . 'ventas/index');
-  }
-
-
-  public function editar($id_venta)
-  {
-
-    if (isset($id_venta)) {
-
-      $V = new  Venta();
-      $ven = $V->get_venta($id_venta);
+    public function agregarventa()
+    {
+      $p = new Producto();
+      $producto = $p->listarProducto();
       $c = new Cliente();
       $cliente = $c->listar();
       $u = new Usuario();
       $usuario = $u->listarUsuario();
+      require APP . 'view/_templates/header.php';
+      require APP . 'view/ventas/agregar.php';
+      require APP . 'view/_templates/footer.php';
 
-      if ($ven === false) {
-        $page = new \Mini\Controller\ErrorController();
-        $page->index();
-      } else {
+    }
 
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/ventas/editar.php';
-        require APP . 'view/_templates/footer.php';
+
+    public function eliminar($id_venta)
+    {
+
+      if (isset($id_venta)) {
+
+        $Ven = new Venta();
+
+        $Ven->eliminar($id_venta);
       }
-    } else {
 
       header('location: ' . URL . 'ventas/index');
     }
-  }
 
-  public function actualizarventa()
-  {
-    // if we have POST data to create a new song entry
-    if (isset($_POST["btnguardaredit"])) {
-      // Instance new Model (Song)
-      $Ven = new Venta();
-      // do updateSong() from model/model.php
-      $Ven->actualizarven($_POST["valor_venta"], $_POST["id_cliente"], $_POST["id_usuario"], $_POST['id_venta']);
+
+    public function editar($id_venta)
+    {
+
+      if (isset($id_venta)) {
+
+        $V = new  Venta();
+        $ven = $V->get_venta($id_venta);
+        $c = new Cliente();
+        $cliente = $c->listar();
+        $u = new Usuario();
+        $usuario = $u->listarUsuario();
+
+        if ($ven === false) {
+          $page = new \Mini\Controller\ErrorController();
+          $page->index();
+        } else {
+
+          require APP . 'view/_templates/header.php';
+          require APP . 'view/ventas/editar.php';
+          require APP . 'view/_templates/footer.php';
+        }
+      } else {
+
+        header('location: ' . URL . 'ventas/index');
+      }
     }
 
-    // where to go after song has been added
-    header('location: ' . URL . 'ventas/index');
+    public function actualizarventa()
+    {
+      // if we have POST data to create a new song entry
+      if (isset($_POST["btnguardaredit"])) {
+        // Instance new Model (Song)
+        $Ven = new Venta();
+        // do updateSong() from model/model.php
+        $Ven->actualizarven($_POST["valor_venta"], $_POST["id_cliente"], $_POST["id_usuario"], $_POST['id_venta']);
+      }
+
+      // where to go after song has been added
+      header('location: ' . URL . 'ventas/index');
+    }
+
+
+
   }
-
-
-
-}
