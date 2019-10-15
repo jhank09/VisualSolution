@@ -1,6 +1,7 @@
 
 
 <div class="container">
+    <h1 class="text-center"> Listado de usuarios</h1>
     <div class="row justify-content-center ">
         <div class="table-responsive">
             <table id="tbl_usuario" class="table table-hover table-sm  table-bordered">

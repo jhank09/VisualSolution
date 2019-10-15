@@ -12,18 +12,16 @@ class LoginController {
     }
 
     public function logueo() {
-
         if (isset($_POST['ingresar'])) {
-
             $correo = new LoginModel();
             $correo->__SET("correo", $_POST['correo']);
             $contraseña = $_POST['contraseña'];
             $resultado = $correo->obtenerCorreo();
             
-
             if ($resultado != false) {
 
                 if (password_verify($contraseña, $resultado->contraseña)) {
+                   
                     if ($resultado->id_rol == 1) {
                         session_start();
                         $_SESSION["id_usuario"] = $resultado->id_usuario;
@@ -43,15 +41,19 @@ class LoginController {
                         $_SESSION["rol"] = $resultado->id_rol;
                         header("location: " . URL . "Home/vistaEmpleado");
                     } else {
-
+                         echo"<script> alert('usuario o contraseña equivocada!!')</script>";
                         header("location: " . URL . "Home");
+                       
                     }
                 } else {
-
+                     echo"<script> alert('usuario o contraseña equivocada!!')</script>";
                     header("location: " . URL . "Home");
+                   
                 }
             } else {
+                  echo"<script> alert('usuario o contraseña equivocada!!')</script>";
                 header("location: " . URL . "Home");
+              
             }
         }
     }

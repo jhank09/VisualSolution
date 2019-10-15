@@ -33,20 +33,11 @@ function validar_formulario() {
 //
 //    event.preventDefault();
 //    jQuery.ajax({
-//        url: uri + "Usuario/listar",
+//        url: uri + "Login/logueo",
 //        type: 'POST',
 //        dataType: 'json'
 //    }).done(function (respuesta) {
-//        respuesta.forEach((element, index) => {
-//
-//            let contraseñabd = element.contraseña;
-//            let correobd = element.correo;
-//            
-//            if((correobd != correo)){
-//                $("#mensaje").html("Usuario o contraseña invalida").css("color", "red");
-//            }
-//
-//        });
+//       
 //    }).fail(function (resp) {
 //        console.log(resp);
 //    });

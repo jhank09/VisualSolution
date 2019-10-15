@@ -64,7 +64,7 @@
                                                 <input type="password" name="contraseña" id="contraseña" class="form-control" placeholder="Contraseña">
                                                 <div id="mensaje2"></div>
                                             </div>
-                                            <button type="submit" name="ingresar" class="btn btn-primary">Login</button>
+                                            <input  id="enviar" type="submit" name="ingresar" class="btn btn-primary" value="Login">
                                         </form>                        
                                     </li>
                                 </ul>
